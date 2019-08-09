@@ -1,0 +1,2 @@
+ <image src='../../qietu/logo@2x.png' class="logo" mode='aspectFit'></image>
+ <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">前去授权</button> 

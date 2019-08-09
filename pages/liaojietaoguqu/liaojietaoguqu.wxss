@@ -1,0 +1,5 @@
+/* pages/liaojietaoguqu/liaojietaoguqu.wxss */
+
+.header, .center, .footer {
+  width: 100%;
+}

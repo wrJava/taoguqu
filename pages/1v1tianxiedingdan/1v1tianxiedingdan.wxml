@@ -1,0 +1,48 @@
+<view class="cangpinmiaoshu">
+  <textarea class="cangpinmiaoshuText" placeholder="请您对藏品进行简单描述，包括但不限于藏品尺寸、年代、瑕疵、收藏时间、来源等信息。" placeholder-style="color:#b9b9b9;font-size:28rpx;" maxlength="500" bindinput="cangpinmiaoshu"></textarea>
+  <view class="cangpinmiaoshuZs" style='color:{{miaoshuNum>=500?"red":"#333"}}'>{{miaoshuNum}}/500字</view>
+</view>
+<!-- 藏品图片 -->
+<view class="cangpinImg">
+  <view wx:for="{{cangpinImgList}}" class="{{oHs == 0?'cangpinImgBoxOdd':'cangpinImgBox'}}">
+    <image class="cangpinImgList" bindtap='{{item=="../../qietu/addimg.png"?"xuanzetupian":"yulantupian"}}' data-index="{{index}}" src="{{item}}" mode='aspectFll'></image>
+    <image class="deleteImg" wx:if="{{item != '../../qietu/addimg.png'}}" src="../../qietu/deleteimg.png" mode="aspectFit" data-index="{{index}}" bindtap='deleteImg'></image>
+  </view>
+</view>
+<!-- 选择专家 -->
+<view class="selectionOfExperts">
+  <view class="expertsNamePrice">
+    <view class="selectionOfExpertsTitle">
+      选择专家
+    </view>
+    <view class="expertsNamePriceSanjiao">
+      <view class="name">{{zhuanjiaData.name}}</view>
+      <view class="price">￥ {{zhuanjiaData.price}}</view>
+    </view>
+  </view>
+  <view class="expertise">
+    <view class="expertiseTitle">该专家所能评鉴的专长分类，请选择：</view>
+    <view class="expertiseListBox">
+      <view class="{{selectExpertise==index?'expertiseListSelect':'expertiseList'}}" data-index="{{index}}" bindtap='selectExpertise' wx:for="{{expertise}}">{{item}}</view>
+    </view>
+  </view>
+</view>
+<!-- 选择优惠 -->
+<view class="selectTheCoupon">
+  <view class="selectTheCouponLeft">选择优惠券</view>
+  <view class="selectTheCoupon_select" wx:if="{{user_coupon_id}}" bindtap='selectCoupon' data-user_coupon_id="{{user_coupon_id}}">- ¥{{price}}</view>
+  <view class="selectTheCoupon_wukeyong" wx:elif="{{user_nocoupon}}" bindtap='selectCoupon'>不使用优惠券</view>
+  <view class="selectTheCoupon_youkeyong" wx:elif="{{couponsNum}}" bindtap='selectCoupon'>有可用优惠券</view>
+  <view class="selectTheCoupon_wukeyong" wx:elif="{{couponsNum == 0}}" bindtap='selectCoupon'>无可用优惠券</view>
+  <view class="selectTheCoupon_sanjiao" bindtap='selectCoupon'>></view>
+</view>
+<!-- 匿名 -->
+<view class="anonymous">
+  <view class="anonymousLeft">匿名</view>
+  <view class="anonymousRight">
+    <switch class='nikcheck' checked="{{shifouniming}}" bindchange='shifouniming' color='#B18750'></switch>
+  </view>
+</view>
+<button class="tijiao" bindtap='tijiao'>
+  提交
+</button>

@@ -1,0 +1,84 @@
+/* pages/zhuce/zhuce.wxss */
+.userinfo {
+  width: 100%;
+  height: 200px;
+  padding-left: 26rpx;
+  position: relative;
+  border-top: 1rpx solid #ddd;
+  padding-top: 20px;
+  
+}
+.cgImg {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  -moz-border-radius:20px;
+  border-radius: 100rpx;
+}
+.zhifuchenggongText {
+  display: block;
+  width: 100%;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 30rpx;
+  color: #666666;
+}
+.shuru1 {
+  border-bottom: 1rpx solid #ddd;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 15px;
+  
+}
+.placeholder1 {
+  font-size: 16px;
+  color: #ddd;
+}
+.yanzhengma {
+  height: 30px;
+  width: 60%;
+}
+.placeholder2 {
+  font-size: 16px;
+  color: #ddd;
+}
+.shuru2 {
+  border-bottom: 1rpx solid #ddd;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 15px;
+  padding-top: 20px;
+}
+.fasong {
+  position: absolute;
+  right: 0;
+  width: 30%;
+  font-size: 12px;
+  margin-right: 20px;
+  top: 265px;
+  color: #666666;
+  /* margin-bottom: 50px; */
+  /* text-align:right; */
+}
+.button::after{
+  border: none;
+}
+.bangding {
+  width: 90%;
+  background: #B18750;
+  height: 98rpx;
+  margin-top: 40px;
+  bottom: 0;
+  text-align: center;
+  color: #ffffff;
+  font-size: 30rpx;
+  line-height: 98rpx;
+}
+
+.tixing {
+  font-size: 12px;
+  color: #B0B0B0;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+

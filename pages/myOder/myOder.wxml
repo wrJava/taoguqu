@@ -1,0 +1,54 @@
+<block wx:if="{{myOrder == true}}">
+  <view class="orderList" wx:for="{{dataList}}" data-index="{{index}}" data-order_sn='{{item.order_sn}}' data-pay_sn='{{item.pay_sn}}'>
+    <view class="orderListaTop">
+      <view class="orderListTopTitle">线上鉴宝</view>
+      <view class="orderListTopstatus" wx:if="{{item.status==0}}">待付款</view>
+      <view class="orderListTopstatus" wx:elif='{{item.status==1}}'>预约中</view>
+      <view class="orderListTopstatus" wx:elif='{{item.status==2}}'>服务中</view>
+      <view class="orderListTopstatus" wx:elif='{{item.status==3}}'>待评价</view>
+      <view class="orderListTopstatus" wx:elif='{{item.status==4}}'>已评价</view>
+      <view class="orderListTopstatus" wx:else='{{item.status==5}}'>已关闭</view>
+    </view>
+    <view class="orderListCentent" bindtap='viewTheDatails' data-thing_id='{{item.thing_id}}' data-pay_sn='{{item.pay_sn}}'>
+      <view class="orderListCententImg">
+        <image class="orderListCententImgList" wx:if="{{item.img_arr==''}}" src="../../qietu/cangpingxiangqing.png" mode='aspectFill' style="margin-left:{{index%2==0?'0':'4rpx'}};"></image>
+        <image class="orderListCententImgList" wx:for="{{item.img_arr}}" src="{{item}}" mode='aspectFill' style="margin-left:{{index%2==0?'0':'4rpx'}};"></image>
+      </view>
+      <view class="orderListCententDesc">{{item.desc}}</view>
+    </view>
+    <view class="orderListDown">
+      <view class="section">
+        <picker bindchange="bindPickerChange" data-value="{{index}}" value="{{index}}" range="{{array}}" data-thing_id='{{item.thing_id}}' data-pay_sn='{{item.pay_sn}}'>
+          <view class="oderListDownBtn" wx:if="{{item.status==0}}" bindcancel='cancellationOfOrder'>取消订单</view>
+        </picker>
+      </view>
+      <view class="oderListDownBtn colorRed" wx:if="{{item.status==0}}" data-idx="{{index}}" bindtap='goToPay' data-thing_id='{{item.thing_id}}' data-out_trade_no='{{item.pay_sn}}' data-money='{{item.money}}' data-body='{{item.desc}}'>去支付</view>
+      <view class="oderListDownBtn" wx:if="{{item.status!=0&&item.status!=6}}" bindtap='viewTheDatails' data-thing_id='{{item.thing_id}}' data-pay_sn='{{item.pay_sn}}'>查看详情</view>
+      <view class="oderListDownBtn" wx:if="{{item.status==6}}" bindtap='deleteOrder' data-idx="{{index}}" data-thing_id='{{item.thing_id}}' data-id='{{item.id}}'>删除订单</view>
+      <!-- <view class="oderListDownBtn colorRed" wx:if="{{item.status==3}}" bindtap='toEvaluate' data-thing_id='{{item.thing_id}}' data-pay_sn='{{item.pay_sn}}'>去评价</view> -->
+      <!-- <view class="oderListDownBtn colorRed" wx:if="{{item.status==4}}" bindtap='viewEvaluation' data-thing_id='{{item.thing_id}}' data-pay_sn='{{item.pay_sn}}'>查看评价</view> -->
+    </view>
+  </view>
+  <!-- <view class="quxiaoyuanyin">
+  <view class="quxiaoyuanyinTitle">111</view>
+  <picker mode="selector" range="{{array}}" value="{{index}}" bindchange="quxiaoyuanyin">
+    <text>{{array[index]}}</text>
+  </picker>
+</view> -->
+</block>
+<block wx:if="{{myOrder == false}}">
+  <image src='../../qietu/wujianbao.png' class='nomyOrdertishiImg' mode='aspectFit'></image>
+  <view class="nomyOrdertishi">
+    您还没有鉴宝记录，找专家鉴宝吧
+  </view>
+</block>
+<view class="discount">
+  <view class="discount-btn" catchtap="discountTap">券</view>
+  <view class="discount-move" animation="{{animationData}}" bindtap='toCouponTap'>
+    <view style="width:360rpx">
+      <text style="margin-left:20rpx;">查看我的优惠券</text>
+      <text class="discount-count">{{discountCount}}张</text>
+      <image src="../../qietu/right.png"></image>
+    </view>
+  </view>
+</view>

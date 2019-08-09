@@ -1,0 +1,65 @@
+/* pages/zhuanjiaxiangqing/zhuanjiaxiangqing.wxss */
+.BjImg{
+  width: 100%;
+  height: 332rpx;
+  background-color: #797979;
+}
+.zhuanjiaavatarname{
+  width: 100%;
+  position: absolute;
+  top: 100rpx;
+  border: 1rpx solid #797979;
+}
+/* .zhuanjiaavatarborder{
+  width: 140rpx;
+  height: 140rpx;
+  margin: 0 auto;
+  
+  border-radius: 50%;
+  border: 4rpx solid #797979;
+  
+} */
+.zhuanjiaavatar{
+  width:120rpx;
+  height:120rpx;
+  /* position:absolute; */
+  /* left:50%; */
+  margin: 0 auto;
+  /* margin-left:-80rpx; */
+  margin-top: 5px;
+  border-radius:50%;
+}
+.zhuanjianame{
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.box{
+  width: 100%;
+  padding-left: 20rpx;
+  border-bottom: 16rpx solid #f3f3f3;
+}
+.title{
+  color: #666;
+  font-size: 28rpx;
+  padding: 32rpx 0;
+  border-bottom: 2rpx solid #f3f3f3;
+  margin-bottom: 24rpx;
+}
+.text{
+  padding: 32rpx 0;
+  padding-right: 24rpx;
+  font-size: 24rpx;
+}
+.fengcaiimg{
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  padding-right: 24rpx;
+  flex-wrap: wrap;
+}
+ .fengcaiImgList{
+   margin-top: 2rpx;
+   padding-left:1px;
+} 

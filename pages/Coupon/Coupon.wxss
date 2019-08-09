@@ -1,0 +1,123 @@
+/* pages/Coupon/Coupon.wxss */
+
+page {
+  background: #f3f3f3;
+}
+
+.bushiyongyouhuijuan {
+  background: #fff;
+  margin-top: 1rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 24rpx;
+}
+
+.bushiyongyouhuijuanText {
+  font-size: 28rpx;
+  color: #1a1a1a;
+  flex: 1;
+}
+.bushiyongyouhuijuanCheckBox{
+  flex: 1;
+  position: relative;
+}
+.bushiyongyouhuijuanCheck {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+}
+
+.keyongtitle, .bukeyongtitle {
+  width: 100%;
+  text-align: center;
+  color: #999;
+  font-size: 28rpx;
+  margin-top: 40rpx;
+}
+.keyongyouhuijuanList {
+  width: 690rpx;
+  height: 190rpx;
+  margin: 28rpx auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.keyongyouhuijuanListBg{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.keyongyouhuijuanListLeft {
+  width: 156rpx;
+  margin-left: 32rpx;
+  padding: 40rpx 0;
+}
+
+.keyongyouhuijuanListLeftPrice {
+  font-size: 48rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.keyongyouhuijuanListLeftKeyongfanwei {
+  width: 100%;
+  text-align: center;
+  font-size: 26rpx;
+  color: #fff;
+}
+
+.keyongyouhuijuanListRight {
+  width: 330rpx;
+  padding-right: 20rpx;
+  padding: 32rpx 0;
+}
+
+.keyongyouhuijuanListRightTitle {
+  font-size: 32rpx;
+  color: #4a4a4a;
+}
+
+.keyongyouhuijuanListRightTime, .keyongyouhuijuanListRightdesc {
+  font-size: 24rpx;
+  color: #9b9b9b;
+  margin-top: 5rpx;
+}
+
+.keyongyouhuijuanListCheck {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  position: relative;
+  top: 50%;
+  right: 20rpx;
+  margin-top: -20rpx;
+}
+
+.bukeyongyouhuijuanListRight {
+  padding: 54rpx 0;
+  width: 273rpx;
+}
+.keyongyouhuijuanListYiguoqiIcon{
+  width: 100rpx;
+  height: 80rpx;
+  position: relative;
+  top: 30rpx;
+  margin-right: 24rpx;
+}
+.wuyouhuijuantishi{
+  width: 100%;
+  font-size: 26rpx;
+  color: #999;
+  text-align: center;
+}
+.wuyouhuijuantishiImg{
+  display: block;
+  width: 90%;
+  margin: 100rpx auto 0 auto;
+}

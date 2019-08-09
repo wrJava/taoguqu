@@ -1,0 +1,23 @@
+<image class="BjImg" src="../../qietu/ditu.png" mode="aspectFill"></image>
+<view class="zhuanjiaavatarname">
+  <view class="zhuanjiaavatarborder">
+    <image src="{{datas.headimg}}" mode="aspectFill" class="zhuanjiaavatar" binderror='zjtxjzsb'></image>
+  </view>
+  <view class="zhuanjianame">{{datas.name}}</view>
+</view>
+
+<view class="box">
+  <view class="title">专家详情</view>
+  <view class="text">{{datas.desc}}</view>
+</view>
+<view class="box">
+  <view class="title">专家领域</view>
+  <view class="text">{{datas.professional}}</view>
+</view>
+<view class="box">
+  <view class="title">专家风采</view>
+  <view class="fengcaiimg">
+   <!-- style="width:{{ifzjfc=0?'33%':'24%'}};height:{{ifzjfc=0?'230rpx':'168rpx'}};" -->
+    <image src="{{item}}" style="width:{{ifzjfc==0?'33%':'24%'}};height:{{ifzjfc==0?'230rpx':'168rpx'}};" wx:for="{{datas.styleimg}}" binderror='zjfztpjzsb' mode='aspectFll' data-index="{{index}}" class="fengcaiImgList" bindtap="clickBig" ></image>
+  </view>
+</view>

@@ -1,0 +1,99 @@
+<view class="cangpinmiaoshu">
+  <textarea class="cangpinmiaoshuText" placeholder="请您对藏品进行简单描述，包括但不限于藏品尺寸、年代、瑕疵、收藏时间、来源等信息。" placeholder-style="color:#b9b9b9;font-size:28rpx;" maxlength="500" bindinput="cangpinmiaoshu"></textarea>
+  <view class="cangpinmiaoshuZs" style='color:{{miaoshuNum>=500?"red":"#333"}}'>{{miaoshuNum}}/500字</view>
+</view>
+<!-- 藏品图片 -->
+<view class="cangpinImg">
+  <view wx:for="{{cangpinImgList}}" class="{{oHs == 0?'cangpinImgBoxOdd':'cangpinImgBox'}}">
+    <image class="cangpinImgList" bindtap='{{item=="../../qietu/addimg.png"?"xuanzetupian":"yulantupian"}}' data-index="{{index}}" src="{{item}}" mode='aspectFll'></image>
+    <image class="deleteImg" wx:if="{{item != '../../qietu/addimg.png'}}" src="../../qietu/deleteimg.png" mode="aspectFit" data-index="{{index}}" bindtap='deleteImg'></image>
+  </view>
+</view>
+<!-- 快速鉴宝 -->
+<view class='leixingBox'>
+  <view class="leixing">
+    <view class="leixingLeft">
+      快速鉴宝
+    </view>
+    <view class="leixingRight">
+      <view class="leixingRightText" data-money="money" bindtap='jianbaojine'>
+        ¥{{apprailsalPrice}}
+      </view>
+      <!-- <view class="leixingRightJiantou">
+          
+      </view> -->
+    </view>
+  </view>
+  <view class="leixing" bindtap='xuanzefenlei'>
+    <view class="leixingLeft">
+      选择分类
+    </view>
+    <view class="leixingRight">
+      <view class="leixingRightText" data-id="{{selectFenleiId}}">{{selectFenlei}}</view>
+      <view class="leixingRightJiantou">
+        >
+      </view>
+    </view>
+  </view>
+  <view class="leixing" bindtap='toCoupon'>
+    <view class="leixingLeft">
+      选择优惠券
+    </view>
+    <view class="leixingRight">
+      <view class="leixingRightText select"  wx:if="{{user_coupon_id}}" data-user_coupon_id="{{user_coupon_id}}"> 
+        - ¥{{price}}
+      </view>
+      <view class="leixingRightText wuyouhuijuan" wx:elif="{{user_nocoupon}}">
+         不使用优惠券
+      </view>
+      <view class="leixingRightText youyouhuijuan" wx:elif="{{couponsNum}}">
+        有可用优惠券
+      </view>
+      <view class="leixingRightText wuyouhuijuan" wx:elif="{{couponsNum == 0}}">
+        无可用优惠券
+      </view>
+      <view class="leixingRightJiantou">
+        >
+      </view>
+    </view>
+  </view>
+  <!-- <view class="leixing nikBox">
+    <view class="leixingLeft nikText">
+      匿名
+    </view>
+    <view class="leixingRight">
+      <switch class='nikcheck' bindchange='shifouniming' color='#B18750'></switch>
+    </view>
+  </view> -->
+  <!-- 评鉴须知 -->
+  <view class="pingjianxuzhi">
+    <view class="pingjianxuzhiTitle">评鉴须知:</view>
+    <view class="pingjianxuzhiList">
+      1.一次只看一件藏品，藏品仅限同一个藏品不同位置照片，否则专家不予鉴宝。
+    </view>
+    <view class="pingjianxuzhiList">
+      2.快速鉴宝支付酬金后，根据您选择的分类，所有相关分类对应的专家开始抢单。若超过24小时无人接单，则酬金在2-3个工作日内按支付途径全额退款。
+    </view>
+    <view class="pingjianxuzhiList">
+      3.1v1选择专家支付酬金后，系统为您派单给指定专家。若该专家无法评鉴此藏品，系统会为您推荐其他专家进行评鉴，当然您也可以选择退款，则酬金在2-3个工作日内按支付途径全额退款。
+    </view>
+    <view class="pingjianxuzhiList">
+      4.专家回复的建议仅代表其个人观点，请酌情参考。
+    </view>
+  </view>
+</view> 
+<button class="tijiao" bindtap='tijiaoxinxi'>
+  提交
+</button>
+
+<view class="xuanzefenlei" wx:if="{{dianjixuanzefenlei}}">
+  <view class="quedingquxiao">
+    <view class="quxiao" bindtap='quxiaoselect'>取消</view>
+    <view class="queding" bindtap='quedingselect'>确定</view>
+  </view>
+  <picker-view indicator-style="height: 50px;" value="{{value}}" bindchange="selectFenlei">
+    <picker-view-column>
+      <view wx:for="{{xuanzefenlei}}" style="line-height: 50px;text-align:center;">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

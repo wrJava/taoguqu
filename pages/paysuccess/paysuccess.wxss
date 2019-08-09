@@ -1,0 +1,183 @@
+/* pages/kuaisujianbao/kuaisujianbao.wxss */
+page{
+  padding-bottom: 100rpx;
+}
+.zhifuchenggong {
+  width: 100%;
+  height: 200px;
+  padding-left: 26rpx;
+  position: relative;
+  border-top: 1rpx solid #ddd;
+}
+.cgImg {
+  width: 80px;
+  height: 80px;
+  padding-top: 30px;
+  margin: 0 auto;
+}
+.zhifuchenggongText {
+  display: block;
+  width: 100%;
+  padding-top: 25px;
+  text-align: center;
+  font-size: 50rpx;
+  color: #666666;
+}
+
+.cangpinmiaoshuZs {
+  text-align: right;
+  font-size: 22rpx;
+  color: #b9b9b9;
+  position: absolute;
+  right: 24rpx;
+  bottom: 7rpx;
+}
+
+.cangpinImg {
+  width: 100%;
+  padding: 20rpx 24rpx 20rpx 2rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cangpinImgBox {
+  width: 30%;
+  height: 216rpx;
+  position: relative;
+  margin-top: 20rpx;
+  margin-left: 22rpx;
+}
+
+.cangpinImgBoxOdd {
+  width: 46.5%;
+  height: 336rpx;
+  position: relative;
+  margin-top: 20rpx;
+  margin-left: 22rpx;
+}
+
+.cangpinImgList {
+  width: 100%;
+  height: 100%;
+}
+
+.deleteImg {
+  width: 40rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: -12rpx;
+  right: -12rpx;
+  z-index: 1;
+}
+
+.leixingBox {
+  width: 100%;
+  padding-left: 24rpx;
+}
+
+.leixing {
+  width: 100%;
+  padding: 32rpx 24rpx 32rpx 0;
+  border-bottom: 1rpx solid #e3e3e3;
+  display: flex;
+  justify-content: space-between;
+}
+
+.leixing:nth-child(1) {
+  border-top: 1rpx solid #e3e3e3;
+}
+
+.leixingRight {
+  display: flex;
+}
+
+.leixingLeft {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.leixingRightText, .leixingRightJiantou {
+  font-size: 28rpx;
+  color: #333;
+  margin: 0 10rpx;
+}
+
+.leixingRightText {
+  font-weight: bold;
+}
+
+.leixingRightJiantou {
+  line-height: 36rpx;
+}
+
+.wuyouhuijuan {
+  color: #999;
+  font-weight: 100;
+}
+
+.youyouhuijuan {
+  width: 200rpx;
+  height: 40rpx;
+  background: #ffc83f;
+  color: #7a593d;
+  text-align: center;
+  border-radius: 10rpx;
+  font-weight: 300;
+  line-height: 40rpx;
+}
+
+.select {
+  color: #d6513e;
+  font-weight: bold;
+}
+
+.nikText {
+  line-height: 54rpx;
+}
+
+.nikBox {
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
+}
+
+.wx-switch-input {
+  width: 80rpx !important;
+  height: 45rpx !important;
+}
+
+.wx-switch-input::before {
+  width: 80rpx !important;
+  height: 45rpx !important;
+}
+
+.wx-switch-input::after {
+  width: 40rpx !important;
+  height: 40rpx !important;
+}
+
+.fahongbao {
+  width: 80%;
+  background: #ffc83f;
+  height: 98rpx;
+  margin-top: 50px;
+  bottom: 0;
+  text-align: center;
+  color: #7a593d;
+  font-size: 30rpx;
+  line-height: 98rpx;
+}
+.chakandingdan {
+  width: 80%;
+  background: #FFFFFF;
+  height: 98rpx;
+  margin-top: 20px;
+  bottom: 0;
+  text-align: center;
+  color: #7a593d;
+  font-size: 30rpx;
+  line-height: 98rpx;
+}
+

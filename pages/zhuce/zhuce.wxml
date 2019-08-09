@@ -1,0 +1,22 @@
+<view class="userinfo">
+  <image src="{{avatarUrl?avatarUrl:'../../qietu/avatar.png'}}" mode="aspectFit" class="cgImg"></image>
+  <view class="zhifuchenggongText"  maxlength="500">{{nickName}}</view>
+</view>
+
+<form bindsubmit='searchBox'>
+  <view class='shuru1'>
+    <input class='shoujihao' placeholder='输入手机号' placeholder-class='placeholder1' bindinput='shoujihao' name="shoujihao"></input>
+  </view>
+  <view class='shuru2'>
+    <input class='yanzhengma' placeholder='输入验证码' placeholder-class='placeholder2' bindinput='yanzhengma' name="yanzhengma"></input>
+    <!-- <view class='fasong' bindtap='fasong'>发送验证码</view> -->
+    <button  class='fasong' disabled='{{disabled}}' data-id="2" bindtap="getVerificationCode" type='primary' plain='true' >
+    {{time}}
+    </button>
+  </view>
+    <!-- <button class='login' form-type='submit'>登录</button> -->
+  </form>
+<button class="bangding" bindtap='bangding'>
+绑定手机号并登陆
+</button>
+<view class='tixing'>初次登陆需绑定您的手机号</view>

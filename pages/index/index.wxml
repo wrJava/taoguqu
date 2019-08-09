@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
+<button open-type="share">转发</button> -->
+<image src="../../qietu/6d7f35362201a5b90491d2a14ff16151d1f981481a60c-ljIqXf@2x.png" mode='aspectFit' class="headerBg"></image>
+<view class="center">
+  <view class="centerList" data-url="/pages/cangpinfenlei/cangpinfenlei" bindtap='tiaozhuan'>
+    <image src="../../qietu/kuaisujianbao.png" mode='aspectFit' class="centerListImg"></image>
+    <text>快速鉴宝</text>
+  </view>
+  <view class="centerList" data-url="/pages/zhuanjialiebiao/zhuanjialiebiao" bindtap='tiaozhuan'>
+    <image src="../../qietu/1v1.png" mode='aspectFit' class="centerListImg"></image>
+    <text>1V1鉴宝</text>
+  </view>
+  <view class="centerList" data-url="/pages/liaojietaoguqu/liaojietaoguqu" bindtap='tiaozhuan'>
+    <image src="../../qietu/wodedingdan.png" mode='aspectFit' class="centerListImg"></image>
+    <text>了解淘古趣</text>
+  </view>
+  <view class="centerList" data-url="/pages/myOder/myOder" bindtap='tiaozhuan'>
+    <image src="../../qietu/liaojietaoguqu.png" mode='aspectFit' class="centerListImg"></image>
+    <text>我的鉴宝订单</text>
+  </view>
+</view>
+<image src="../../qietu/index-footer.png" mode='aspectFit' class="footerImg"></image>

@@ -1,0 +1,32 @@
+<view class="shaixuanpaixu">
+  <view class="shaixuanBox">
+    <picker class="sheixuan" data-lr="left" bindtap='sanjiaobianhuan' bindcancel="bindCasPickerChange" bindchange="bindCasPickerChange" value="{{leftIndex}}" range="{{leftArray}}">
+      <view class="xuanxiang">{{leftArray[leftIndex]}}</view>
+    </picker>
+    <image src='{{leftSanjiao?"../../qietu/shang.png":"../../qietu/down.png"}}' class="sanjiao"></image>
+  </view>
+  <view class="paixuBox">
+    <picker class="paixu" data-lr="right" bindtap='sanjiaobianhuan' bindcancel="bindCasPickerChange" bindchange="bindCasPickerChange" value="{{rightIndex}}" range="{{rightArray}}">
+      <view class="xuanxiang">{{rightArray[rightIndex]}}</view>
+    </picker>
+    <image src='{{rightSanjiao?"../../qietu/shang.png":"../../qietu/down.png"}}' class="sanjiao"></image>
+  </view>
+</view>
+
+<view class="zhuanjiaList" wx:for="{{zhuanjialiebiao}}" bindtap='tozhuanjiadanye' data-id='{{item.expert_id}}' data-name="{{item.name}}" data-price="{{item.price}}" data-specialty_arr="{{item.specialty_arr}}">
+  <image class="avatar" mode="aspectFill" src="{{item.headimg}}" binderror="touxiangcuowu" data-index="{{index}}"></image>
+  <view class="right">
+    <view class="top">
+      <view class="name">{{item.name}}</view>
+      <view class="jiandingshu">已鉴宝：{{item.appraisal_num}}</view>
+    </view>
+    <view class="down">
+      <view class="biaoqianList" wx:for="{{item.specialty_arr}}">{{item}}</view>
+      <view class="jiage">
+        ¥
+        <view>{{item.price}}</view>
+        起
+      </view>
+    </view>
+  </view>
+</view>

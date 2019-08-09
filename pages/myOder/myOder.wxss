@@ -1,0 +1,145 @@
+
+.orderList {
+  width: 100%;
+  border-top: 10rpx solid #f3f3f3;
+}
+
+.orderListaTop {
+  width: 100%;
+  border-bottom: 2rpx solid #f3f3f3;
+  padding: 24rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderListTopTitle, .orderListTopstatus {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.orderListTopstatus {
+  color: #7a593d;
+}
+
+.orderListCentent {
+  width: 100%;
+  border-bottom: 2rpx solid #f3f3f3;
+  display: flex;
+  padding: 24rpx;
+}
+
+.orderListCententImg {
+  width: 176rpx;
+  height: 176rpx;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.orderListCententImgList {
+  width: 86rpx;
+  height: 86rpx;
+}
+
+.orderListCententImgList:nth-child(3), .orderListCententImgList:nth-child(4) {
+  margin-top: 4rpx;
+}
+
+.orderListCententDesc {
+  flex: 1;
+  margin-left: 40rpx;
+  font-size: 28rpx;
+  color: #333;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.orderListDown {
+  width: 100%;
+  padding: 24rpx 24rpx;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 2rpx solid #f3f3f3;
+}
+
+.oderListDownBtn {
+  font-size: 26rpx;
+  color: #333;
+  padding: 8rpx 24rpx;
+  margin: 0 14rpx;
+  border: 2rpx solid #999;
+  border-radius: 10rpx;
+}
+
+.colorRed {
+  border: 2rpx solid #d6513e;
+  color: #d6513e;
+}
+
+.nomyOrdertishi{
+  width: 100%;
+  font-size: 26rpx;
+  color: #999;
+  text-align: center;
+}
+.nomyOrdertishiImg{
+  display: block;
+  width: 90%;
+  margin: 100rpx auto 0 auto;
+}
+.discount{
+  position: fixed;
+  right:50rpx;
+  bottom:40rpx;
+  font-size: 28rpx;
+}
+.discount-btn{
+  position: absolute;
+  right:0;
+  bottom:0;
+  width:68rpx;
+  height:68rpx;
+  line-height: 68rpx;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 40rpx;
+  color: #7A593D;
+  background: #FFC83F;
+}
+.discount-move{
+  position: absolute;
+  width:0;
+  height:68rpx;
+  line-height: 68rpx;
+  right:0;
+  bottom:0;
+  background: #FFEFC8;
+  z-index: -99;
+  overflow: hidden;
+  font-size: 24rpx;
+  border-radius: 34rpx;
+}
+.discount-move>view{
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+}
+.discount-move>view>image{
+  width:18rpx;
+  height:30rpx;
+  vertical-align: middle;
+  margin-left:10rpx;
+  display: inline-block;
+}
+.discount-move>view>text{
+  display: inline;
+}
+.discount-count{
+  margin-left:20rpx;
+  font-size: 30rpx;
+  color: #D14531;
+}

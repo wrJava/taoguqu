@@ -1,0 +1,41 @@
+<!--pages/myCoupon/myCoupon.wxml-->
+<block wx:if="{{ifyouhuijuan==true}}">
+  <view class="keyongyouhuijuanList" wx:for="{{availablCoupons}}" wx:key="coupon_id">
+    <image class="keyongyouhuijuanListBg" src='../../qietu/coupon@2x.png' mode='aspectFit'></image>
+    <view class="keyongyouhuijuanListLeft">
+      <view class="keyongyouhuijuanListLeftPrice">¥ {{item.price}}</view>
+      <view class="keyongyouhuijuanListLeftKeyongfanwei">
+        {{item.limit_price==0?"任意金额可用":"满"+item.limit_price+"可用"}}
+      </view>
+    </view>
+    <view class="keyongyouhuijuanListRight" bindtap='selectCoupon' data-index="{{index}}" data-user_coupon_id="{{item.user_coupon_id}}">
+      <view class="keyongyouhuijuanListRightTitle">{{item.title}}</view>
+      <view class="keyongyouhuijuanListRightTime">有效期至{{item.end_time}}</view>
+      <view class="keyongyouhuijuanListRightdesc">{{item.desc}}</view>
+    </view>
+    <image class="keyongyouhuijuanListCheck"></image>
+  </view>
+  <view class="bukeyongtitle" wx:if="{{invalidationRoll.length!=0&&alreadylCoupons.length!=0}}">
+    不可用的优惠券
+  </view>
+  <view class="keyongyouhuijuanList" wx:for="{{invalidationRoll}}">
+    <image class="keyongyouhuijuanListBg" src='../../qietu/Combined@2x.png' mode='aspectFit'></image>
+    <view class="keyongyouhuijuanListLeft">
+      <view class="keyongyouhuijuanListLeftPrice">¥ {{item.price}}</view>
+      <view class="keyongyouhuijuanListLeftKeyongfanwei">
+        {{item.state==0?"任意金额可用":"满"+item.state+"可用"}}
+      </view>
+    </view>
+    <view class="keyongyouhuijuanListRight bukeyongyouhuijuanListRight">
+      <view class="keyongyouhuijuanListRightTitle">{{item.title}}</view>
+      <view class="keyongyouhuijuanListRightTime">有效期至{{item.end_time}}</view>
+    </view>
+    <image class="keyongyouhuijuanListYiguoqiIcon" src="{{item.state==2?'../../qietu/guoqiIcon@2x.png':'../../qietu/yiyong.png'}}"></image>
+  </view>
+</block>
+<block wx:if="{{ifyouhuijuan == false}}">
+  <image src='../../qietu/wuyouhuijuan.png' class='wuyouhuijuantishiImg' mode='aspectFit'></image>
+      <view class="wuyouhuijuantishi">
+       您还没有可用优惠券
+      </view>
+</block>

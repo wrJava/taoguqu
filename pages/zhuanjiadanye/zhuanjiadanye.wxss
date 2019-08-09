@@ -1,0 +1,224 @@
+/* pages/zhuanjiadanye/zhuanjiadanye.wxss */
+
+.bgImg {
+  width: 100%;
+  height: 360rpx;
+}
+
+.avatar {
+  width: 160rpx;
+  height: 160rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -80rpx;
+  top: 290rpx;
+  border-radius: 50%;
+}
+
+.name {
+  width: 100%;
+  text-align: center;
+  margin-top: 100rpx;
+}
+
+.zhuanchang {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
+.zhuanchangList {
+  color: #999;
+  font-size: 22rpx;
+  border: 2rpx solid #999;
+  border-radius: 10rpx;
+  padding: 4rpx 10rpx;
+  margin-left: 28rpx;
+}
+
+.zhuanchangList:nth-child(1) {
+  margin-left: 0;
+}
+
+.guanzhufensi {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 25rpx;
+}
+
+.guanzhu, .fensi {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.fensi {
+  margin-left: 72rpx;
+}
+
+.jianbaobtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40rpx 24rpx 32rpx 24rpx;
+  border-bottom: 16rpx solid #f3f3f3;
+}
+
+.xianshang, .xianxia {
+  flex: 1;
+  /* width: 80px; */
+  border-radius: 10rpx;
+  background: #ffc83f;
+  font-size: 28rpx;
+  color: #7a593d;
+  text-align: center;
+  padding: 24rpx 40rpx;
+}
+
+.xianxia {
+  margin-left: 5rpx;
+  line-height: 48rpx;
+}
+.xianshang {
+  line-height: 48rpx;
+  margin-right: 45rpx;
+}
+
+.xianshang>text {
+  font-weight: bold;
+  display: inline-block;
+  font-size: 34rpx;
+}
+
+.zhuanjiaxiangqing {
+  width: 100%;
+  padding: 0 24rpx 30rpx 24rpx;
+  border-bottom: 16rpx solid #f3f3f3;
+}
+
+.title {
+  padding: 30rpx 0;
+  color: #666;
+  font-size: 28rpx;
+  border-bottom: 2rpx solid #e7e8e9;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title>view:nth-child(2) {
+  line-height: 40rpx;
+}
+
+.zhuanjiaxiangqingdesc {
+  padding: 30rpx 0 0 0;
+  font-size: 24rpx;
+  color: #9b9b9b;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pinglun {
+  width: 100%;
+  padding: 0 24rpx;
+}
+
+.pingluncenterList {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 28rpx;
+  padding-bottom: 39rpx;
+  border-bottom: 2rpx solid #f3f3f3;
+}
+
+.top {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.pinglunavatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+.pinglunname {
+  color: #000;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+  line-height: 60rpx;
+}
+
+.start {
+  display: flex;
+  margin-left: 30rpx;
+  flex: 1;
+}
+
+.startList {
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 16rpx;
+}
+
+.time {
+  color: #939496;
+  font-size: 22rpx;
+  line-height: 60rpx;
+}
+
+.pinglundesc {
+  color: #4a4a4a;
+  font-size: 24rpx;
+  padding-left: 85rpx;
+  margin-top: 20rpx;
+}
+
+.pinglunshangpin {
+  width: 622rpx;
+  background: #f2f2f2;
+  margin-top: 30rpx;
+  margin-left: 80rpx;
+  padding: 14rpx 40rpx 14rpx 14rpx;
+  display: flex;
+}
+
+.shangpinImg {
+  width: 140rpx;
+  height: 140rpx;
+}
+
+.shangpintest {
+  color: #4a4a4a;
+  font-size: 24rpx;
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.tusizhezhao {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 1s;
+}
+
+.tusitishi {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -25%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  padding: 20rpx;
+}

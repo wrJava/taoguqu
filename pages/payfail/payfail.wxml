@@ -1,0 +1,11 @@
+<view class="zhifuchenggong">
+  <image src="../../qietu/shibai.png" mode="aspectFit" class="cgImg"></image>
+  <view class="zhifuchenggongText"  maxlength="500">支付失败</view>
+</view>
+
+<!-- <button class="fahongbao" bindtap=''>
+发红包，去抽奖
+</button> -->
+<button class="chakan" bindtap='chakandingdan' data-thing_id='{{item.thing_id}}'>
+查看我的订单
+</button>

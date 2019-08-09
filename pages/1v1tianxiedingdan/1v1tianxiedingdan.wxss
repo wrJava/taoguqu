@@ -1,0 +1,231 @@
+/* pages/1v1tianxiedingdan/1v1tianxiedingdan.wxss */
+
+page {
+  padding-bottom: 100rpx;
+}
+
+.cangpinmiaoshu {
+  width: 100%;
+  padding-left: 26rpx;
+  position: relative;
+}
+
+.cangpinmiaoshuText {
+  display: block;
+  width: 100%;
+  border-bottom: 1rpx solid #ddd;
+  font-size: 28rpx;
+}
+
+.cangpinmiaoshuZs {
+  text-align: right;
+  font-size: 22rpx;
+  color: #b9b9b9;
+  position: absolute;
+  right: 24rpx;
+  bottom: 7rpx;
+}
+
+.cangpinImg {
+  width: 100%;
+  padding: 20rpx 24rpx 40rpx 2rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cangpinImgBox {
+  width: 30%;
+  height: 216rpx;
+  position: relative;
+  margin-top: 20rpx;
+  margin-left: 22rpx;
+}
+
+.cangpinImgBoxOdd {
+  width: 46.5%;
+  height: 336rpx;
+  position: relative;
+  margin-top: 20rpx;
+  margin-left: 22rpx;
+}
+
+.cangpinImgList {
+  width: 100%;
+  height: 100%;
+}
+
+.deleteImg {
+  width: 40rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: -12rpx;
+  right: -12rpx;
+  z-index: 1;
+}
+
+.selectionOfExperts {
+  width: 100%;
+}
+
+.expertsNamePrice {
+  width: 726rpx;
+  padding: 32rpx 24rpx 32rpx 0;
+  border-top: 2rpx solid #e3e3e3;
+  border-bottom: 2rpx solid #e3e3e3;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 24rpx;
+}
+
+.selectionOfExpertsTitle {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.expertsNamePriceSanjiao {
+  display: flex;
+}
+
+.name {
+  font-size: 28rpx;
+}
+
+.price{
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.expertise {
+  width: 100%;
+}
+
+.expertiseTitle {
+  width: 726rpx;
+  margin-left: 24rpx;
+  font-size: 28rpx;
+  padding: 32rpx 0 16rpx 0;
+}
+
+.expertiseListBox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 24rpx;
+  padding-bottom: 30rpx;
+}
+
+.expertiseListSelect {
+  width: 20%;
+  text-align: center;
+  padding: 20rpx;
+  font-size: 24rpx;
+  background: #ffefc8;
+  color: #7a593d;
+  margin-left: 24rpx;
+  margin-top: 12rpx;
+}
+
+.expertiseList {
+  width: 20%;
+  text-align: center;
+  padding: 20rpx;
+  font-size: 24rpx;
+  background: #f4f4f4;
+  color: #7a593d;
+  margin-left: 24rpx;
+  margin-top: 12rpx;
+}
+
+.selectTheCoupon {
+  width: 726rpx;
+  margin-left: 24rpx;
+  padding: 32rpx 24rpx 32rpx 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #eaeaea;
+  border-top: 2rpx solid #eaeaea;
+}
+
+.selectTheCouponLeft {
+  font-size: 28rpx;
+  color: #333;
+  flex: 1;
+}
+
+.selectTheCoupon_sanjiao {
+  color: #999;
+  font-size: 24rpx;
+  margin-left: 20rpx;
+}
+
+.selectTheCoupon_select {
+  font-size: 26rpx;
+  color: #d6513e;
+  font-weight: bold;
+}
+
+.selectTheCoupon_youkeyong {
+  width: 172rpx;
+  color: #7a593d;
+  text-align: center;
+  font-size: 24rpx;
+  background: #ffc83f;
+  border-radius: 10rpx;
+}
+
+.selectTheCoupon_wukeyong {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 40rpx;
+}
+
+.anonymous {
+  width: 726rpx;
+  margin-left: 24rpx;
+  display: flex;
+  padding: 32rpx 24rpx 32rpx 0;
+  justify-content: space-between;
+}
+
+.anonymousLeft {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 60rpx;
+}
+
+.anonymousRight {
+  width: 80rpx;
+  height: 50rpx;
+}
+
+.wx-switch-input {
+  width: 80rpx !important;
+  height: 50rpx !important;
+}
+
+.wx-switch-input::before {
+  width: 80rpx !important;
+  height: 50rpx !important;
+  box-shadow: inset 0 0 1px 0;  
+}
+
+.wx-switch-input::after {
+  width: 47rpx !important;
+  height: 47rpx !important;
+}
+
+.tijiao {
+  width: 100%;
+  display: block;
+  background: #ffc83f;
+  font-size: 30rpx;
+  color: #7a593d;
+  position: fixed;
+  bottom: 0;
+}

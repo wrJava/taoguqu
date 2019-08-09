@@ -1,0 +1,57 @@
+<image src="http://source.taoguqu.com/image/small_program/ditu.png" mode="aspectFit" class="bgImg"></image>
+<image src="{{datas.headimg}}" class="avatar" mode="aspectFill" binderror="avatarerror"></image>
+<view class="name">{{datas.name}}</view>
+<view class="zhuanchang">
+  <view class="zhuanchangList" wx:for="{{datas.specialty_arr}}">{{item}}</view>
+</view>
+<view class="guanzhufensi">
+  <view class="guanzhu">{{datas.attion_num}} 关注数</view>
+  <view class="fensi">{{datas.fun_num}} 粉丝数</view>
+</view>
+
+<view class="jianbaobtn">
+  <view wx:if="{{datas.online_price > 0}}" class="xianshang" > 
+      <view bindtap='to1v1tianxiedingdan' data-id='{{zhuanjiaid}}'>线上鉴宝
+        <text style='float:right;font-weight:bold;'> ￥{{datas.online_price}}</text>
+      </view>
+  </view>
+
+ <view class="xianxia" bindtap='tusitishi' data-btn="0">线下约见</view> 
+</view>
+<view class="zhuanjiaxiangqing" bindtap='toxiangqing'>
+  <view class="title">
+    <view class="titledesc">专家详情</view>
+    <view class="titleicon">></view>
+  </view>
+  <view class="zhuanjiaxiangqingdesc">{{datas.desc}}</view>
+</view>
+<!-- 评论 -->
+<view wx:if="{{datas.evalu_num > 0}}">
+<view class="pinglun" bindtap='tusitishi' data-btn="1">
+  <view class="title">
+    <view class="titledesc">评论({{datas.evalu_num}})</view>
+    <view class="titleicon">></view>
+  </view>
+  <view class="pingluncenterList" wx:for="{{datas.evaluate}}" data-id="{{index}}">
+    <view class="top">
+        <image class="pinglunavatar" data-index="{{index}}"  wx:if="{{item.user_img==''}}" src="../../qietu/avatar.png" mode='aspectFill' binderror='pinglunavatarerror'></image>
+            <image class="pinglunavatar" data-index="{{index}}"   src='{{item.user_img}}' mode='aspectFill' binderror='pinglunavatarerror'></image>
+
+      <view class="pinglunname">{{item.vip_name}}</view>
+      <view class="start">
+        <image class="startList" src='{{item}}' mode="aspectFit" wx:for="{{item.scores}}"></image>
+      </view>
+      <view class="time">{{item.evalu_time}}</view>
+    </view>
+
+    <view class="pinglundesc">{{item.desc}}</view>
+    <view class="pinglunshangpin">
+      <image class="shangpinImg" src='{{item.img}}' binderror='plspimg' data-index="{{index}}" mode="aspectFll"></image>
+      <view class="shangpintest">{{item.thing_desc}}</view>
+    </view>
+  </view>
+</view>
+<view class="tusizhezhao" style='opacity: {{tsts.op}}; display:{{tsts.op==0?"none":"block"}}'>
+  <view class="tusitishi">{{tsts.text}}</view>
+</view>
+</view>

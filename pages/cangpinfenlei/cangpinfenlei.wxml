@@ -1,0 +1,6 @@
+<view class="bg">
+  <view class="fenleiList" wx:for="{{datas.data}}" data-id="{{item.id}}" data-fenlei="{{item.name}}" bindtap='xuanzefenlei'>
+    <image src="{{item.img}}" mode='aspectFit' binderror='tpjzsb' data-index="{{index}}"></image>
+    <text class="name">{{item.name}}</text>
+  </view>
+</view>

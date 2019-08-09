@@ -1,0 +1,195 @@
+<!-- 藏品信息 -->
+<view class="top">
+  <view class="topFadanrenInformation">
+    <view class="topFadanrenInformationAvatar">
+      <image class="topFadanrenInformationAvatar" wx:if="{{fadanAvatar==''}}" src="../../qietu/avatar.png" mode='aspectFill'></image>
+      <image class="topFadanrenInformationAvatar" src="{{fadanAvatar}}" mode='aspectFill'></image>
+    </view>
+    <view class="topFadanrenInformationNameType">
+      <view class="topFadanrenInformationName">{{fadanName}}</view>
+      <view class="topFadanrenInformationType">{{fadanType}}</view>
+    </view>
+  </view>
+  <view class="topCangpinmiaoshu">
+    {{cangpinDesc}}
+  </view>
+  <!-- 藏品图片 -->
+  <view class="topImg">
+    <image class="topImgList" style='margin-left:{{index%3==0?"0":".5%"}}' wx:for="{{cangpinImg}}" src='{{item}}' mode="aspectFill" bindtap='onClickImg' data-index="{{index}}"></image>
+  </view>
+  <!-- 发单时间点赞数评论数 -->
+  <view class="topTimeFabulousComment">
+    <view class="topTime">{{fadanTime}}</view>
+    <view class="topFabulousComment">
+      <view class="topTimeFabulous" data-if="0" bindtap='clickjianZan'>
+        <image class="topTimeFabulousIcon" wx:if="{{is_likes==1}}" src="../../qietu/nofabulous.png" mode='aspectFit'></image>
+        <image class="topTimeFabulousIcon" wx:if="{{is_likes==0}}" src="../../qietu/fabulou.png" mode='aspectFit'></image>
+        赞 {{cangpinFabulous}}
+      </view>
+      <view class="topTimeComment" bindtap="onClickpinglun">
+        <image class="topTimeCommentIcon" src="../../qietu/pinglun.png" mode='aspectFit'></image>
+        评论 {{cangpinComment}}
+        <!-- <button type='' bingtap="pinglun"></button> -->
+      </view>
+      <modal hidden="{{hiddenmodalput}}" title="请输入评论" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+        <textarea maxlength='500' type='text' placeholder="请输入评论" name="shuru" bindinput="shuru"></textarea>
+      </modal>
+    </view>
+  </view>
+</view>
+<!-- 专家评论 -->
+<view class="center" wx:if="{{expert == ''}}" style="visibility:hidden;">
+
+</view>
+<view class="center" wx:elif="{{expert}}">
+  <!-- <view class="centerTitle"  wx:if="{{item.expert == ''}}">
+    
+  </view> -->
+  <view class="centerTitle">
+    专家评鉴
+  </view>
+  <block wx:for='{{expert}}'>
+    <!-- 文字付费 -->
+    <view class="centerPingjian" wx:if="{{item.is_listen==true&&item.type==1}}">
+      <!-- 看真假 -->
+      <image class="centerPingjianIfZJ" src="../../qietu/kanzhen.png" mode='aspectFit' wx:if="{{item.result_type==1}}"></image>
+      <image class="centerPingjianIfZJ" src="../../qietu/kanjia.png" mode='aspectFit' wx:elif="{{item.result_type==2}}"></image>
+      <image class="centerPingjianIfZJ" src="../../qietu/cunyi.png" mode='aspectFit' else="{{item.result_type==3}}"></image>
+      <!-- 头像名称专长 -->
+      <view class="centerPingjianTop">
+        <view class="centerPingjianTopAvatarBox">
+          <image class="centerPingjianTopAvatar" src="{{item.headimg}}" mode='aspectFill'></image>
+          <image class="centerPingjianTopAvatarV" src="../../qietu/jiaV.png" mode='aspectFit'></image>
+        </view>
+        <view class="centerPingjianTopName">{{item.expert_name}}</view>
+        <view class="centerPingjianTopExpertise">{{item.specialty}}鉴宝专家</view>
+      </view>
+      <!-- 评鉴内容 -->
+      <view class="centerPingjianCenter">
+        {{item.desc}}
+      </view>
+      <view class="centerPingjianDown">
+        <view class="listenNum">看过 {{item.listen_num}}</view>
+        <image class="pingjianFabulousIcon" src="{{zhuanjiais_likes?'../../qietu/fabulous.png':'../../qietu/weizan.png'}}" bindtap='clickjianZan' data-if="1"></image>
+        <view class="pingjianFabulous" bindtap='clickjianZan' data-if="1">
+          赞{{zhuanjiaFabulous}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 文字未付费 -->
+    <view class="centerPingjian" wx:elif="{{item.is_listen==false&&item.type==1}}">
+      <!-- 看真假 -->
+      <image class="centerPingjianIfZJ" src="../../qietu/kanzhen.png" mode='aspectFit' wx:if="{{item.result_type==1}}"></image>
+      <image class="centerPingjianIfZJ" src="../../qietu/kanjia.png" mode='aspectFit' wx:elif="{{item.result_type==2}}"></image>
+      <image class="centerPingjianIfZJ" src="../../qietu/cunyi.png" mode='aspectFit' else="{{item.result_type==3}}"></image>
+      <!-- 头像名称专长 -->
+      <view class="centerPingjianTop">
+        <view class="centerPingjianTopAvatarBox">
+          <image class="centerPingjianTopAvatar" src="{{item.headimg}}" mode='aspectFill'></image>
+          <image class="centerPingjianTopAvatarV" src="../../qietu/jiaV.png" mode='aspectFit'></image>
+        </view>
+        <view class="centerPingjianTopName">{{item.expert_name}}</view>
+        <view class="centerPingjianTopExpertise">{{item.specialty}}鉴宝专家</view>
+      </view>
+      <!-- 评鉴内容 -->
+      <view class="centerPingjianCenter xuyaofufeikan" style='white-space:pre-line'>
+        {{item.desc}}
+        <view class="zhezhaoceng" bindtap='onClickTTK'>{{item.listen_price}}元偷偷看</view>
+      </view>
+      <view class="centerPingjianDown">
+        <view class="listenNum">看过 {{item.listen_num}}</view>
+        <image class="pingjianFabulousIcon" wx:if="{{zhuanjiais_likes==0}}" src="../../qietu/weizan.png" bindtap='clickjianZan' data-if="1"></image>
+        <image class="pingjianFabulousIcon" wx:if="{{zhuanjiais_likes==1}}" src="../../qietu/fabulous.png" bindtap='clickjianZan' data-if="1"></image>
+        <view class="pingjianFabulous" bindtap='clickjianZan' data-if="1">
+          赞{{zhuanjiaFabulous}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 语音付费 -->
+    <view class="centerPingjian" wx:if="{{item.is_listen==true&&item.type==0}}">
+      <!-- 看真假 -->
+      <image class="centerPingjianIfZJ" src="../../qietu/kanzhen.png" mode='aspectFit' wx:if="{{item.result_type==1}}"></image>
+      <image class="centerPingjianIfZJ" src="../../qietu/kanjia.png" mode='aspectFit' wx:elif="{{item.result_type==2}}"></image>
+      <image class="centerPingjianIfZJ" src="../../qietu/cunyi.png" mode='aspectFit' else="{{item.result_type==3}}"></image>
+      <!-- 头像名称专长 -->
+      <view class="centerPingjianTop">
+        <view class="centerPingjianTopAvatarBox">
+          <image class="centerPingjianTopAvatar" src="{{item.headimg}}" mode='aspectFill'></image>
+          <image class="centerPingjianTopAvatarV" src="../../qietu/jiaV.png" mode='aspectFit'></image>
+        </view>
+        <view class="centerPingjianTopName">{{item.expert_name}}</view>
+        <view class="centerPingjianTopExpertise">{{item.specialty}}鉴宝专家</view>
+      </view>
+      <!-- 评鉴内容 -->
+      <view class="centerPingjianCenter yuyinpingjian" wx:if="{{isplay==false}}" bindtap='onClickTYY'>
+        <image src="../../qietu/yuyin.png" class="yuyinIcon" mode="aspectFit"></image>
+        <view class="yuyinText">{{yuyinText?yuyinText:"加载中..."}}</view>
+      </view>
+      <view class="centerPingjianCenter yuyinpingjian" wx:if="{{isplay==true}}" bindtap='onClickStop'>
+        <image src="../../qietu/yuyin.png" class="yuyinIcon" mode="aspectFit"></image>
+        <view class="yuyinText">{{yuyinText}}</view>
+      </view>
+      <view class="centerPingjianDown">
+        <view class="listenNum">看过 {{item.listen_num}}</view>
+        <image class="pingjianFabulousIcon" src="{{zhuanjiais_likes?'../../qietu/fabulous.png':'../../qietu/weizan.png'}}" bindtap='clickjianZan' data-if="1"></image>
+        <view class="pingjianFabulous" bindtap='clickjianZan' data-if="1">
+          赞{{zhuanjiaFabulous}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 语音未付费 -->
+    <view class="centerPingjian" wx:if="{{item.is_listen==false&&item.type==0}}">
+      <!-- 看真假 -->
+      <image class="centerPingjianIfZJ" src="../../qietu/kanzhen.png" mode='aspectFit' wx:if="{{item.result_type==1}}"></image>
+      <image class="centerPingjianIfZJ" src="../../qietu/kanjia.png" mode='aspectFit' wx:elif="{{item.result_type==2}}"></image>
+      <image class="centerPingjianIfZJ" src="../../qietu/cunyi.png" mode='aspectFit' else="{{item.result_type==3}}"></image>
+      <!-- 头像名称专长 -->
+      <view class="centerPingjianTop">
+        <view class="centerPingjianTopAvatarBox">
+          <image class="centerPingjianTopAvatar" src="{{item.headimg}}" mode='aspectFill'></image>
+          <image class="centerPingjianTopAvatarV" src="../../qietu/jiaV.png" mode='aspectFit'></image>
+        </view>
+        <view class="centerPingjianTopName">{{item.expert_name}}</view>
+        <view class="centerPingjianTopExpertise">{{item.specialty}}鉴宝专家</view>
+      </view>
+      <!-- 评鉴内容 -->
+      <view class="centerPingjianCenter yuyinpingjian" wx:if="{{isplay==false}}" bindtap='onClickTYY'>
+        <image src="../../qietu/yuyin.png" class="yuyinIcon" mode="aspectFit"></image>
+        <view class="yuyinText">{{yuyinText}}</view>
+      </view>
+      <view class="centerPingjianCenter yuyinpingjian" wx:if="{{isplay==true}}" bindtap='onClickStop'>
+        <image src="../../qietu/yuyin.png" class="yuyinIcon" mode="aspectFit"></image>
+        <view class="yuyinText">{{yuyinText}}</view>
+      </view>
+      <view class="centerPingjianDown">
+        <view class="listenNum">看过 {{item.is_listen}}</view>
+        <image class="pingjianFabulousIcon" src="{{zhuanjiais_likes == 1?'../../qietu/fabulous.png':'../../qietu/weizan.png'}}" bindtap='clickjianZan' data-if="1"></image>
+        <view class="pingjianFabulous" bindtap='clickjianZan' data-if="1">
+          赞{{zhuanjiaFabulous}}
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<!-- 藏友留言 -->
+<view class="down">
+  <view class='downTitle' wx:if="{{pinglunliuyan!=''}}">藏友留言</view>
+  <view class="downList" wx:for="{{pinglunliuyan}}" data-id="{{item.id}}" data-thing_id="{{item.thing_id}}" data-vip_id="{{item.vip_id}}" catchtap="answerTap">
+    <view class="downListAvatarNameTime">
+      <image class='downListAvatar' wx:if="{{item.user_img==null}}" src="../../qietu/avatar.png" mode='aspectFill'></image>
+      <image class='downListAvatar' wx:if="{{item.user_img}}" src="{{item.user_img}}" mode='aspectFill'></image>
+      <view class="downListName">{{item.vip_name}}</view>
+      <view class="downListTime" wx:if="{{item.evalu_time==null}}">刚刚</view>
+      <view class="downListTime" wx:if="{{item.evalu_time}}">{{item.evalu_time}}</view>
+    </view>
+    <view class="downListDesc">
+      <text wx:if="{{item.parent_id!=0}}">回复<text class="parent-name">@{{item.parent_name}}：</text></text>{{item.desc}}
+      <view class="parent-desc" wx:if="{{item.parent_id!=0}}">
+        <text class="parent-name">{{item.parent_name}}：</text>{{item.parent_desc}}
+      </view>
+    </view>
+  </view>
+</view>

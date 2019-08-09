@@ -1,0 +1,11 @@
+<view class="zhifuchenggong">
+  <image src="../../qietu/xuanzhongyuan.png" mode="aspectFit" class="cgImg"></image>
+  <view class="zhifuchenggongText"  maxlength="500">支付成功</view>
+</view>
+
+<!-- <button class="fahongbao" bindtap=''>
+发红包，去抽奖
+</button> -->
+<button class="chakandingdan" bindtap='chakandingdan'>
+查看我的订单
+</button>
