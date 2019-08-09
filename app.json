@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/zhuce/zhuce",
+    "pages/zz/zz",
+    "pages/logs/logs",
+    "pages/myOder/myOder",
+    "pages/Coupon/Coupon",
+    "pages/cangpinfenlei/cangpinfenlei",
+    "pages/zhuanjiadanye/zhuanjiadanye",
+    "pages/kuaisujianbao/kuaisujianbao",
+    "pages/zhuanjialiebiao/zhuanjialiebiao",
+    "pages/cangpinxiangqing/cangpinxiangqing",
+    "pages/zhuanjiaxiangqing/zhuanjiaxiangqing",
+    "pages/1v1tianxiedingdan/1v1tianxiedingdan",
+    "pages/liaojietaoguqu/liaojietaoguqu",
+    "pages/login/login",
+    "pages/paysuccess/paysuccess",
+    "pages/payfail/payfail",
+    "pages/myCoupon/myCoupon"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "color": "#343434",
+    "selectedColor": "#343434",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./qietu/index.png",
+        "selectedIconPath": "./qietu/index-select.png"
+      },
+      {
+        "pagePath": "pages/myOder/myOder",
+        "text": "我的鉴宝",
+        "iconPath": "./qietu/dingdan.png",
+        "selectedIconPath": "./qietu/dingdan-select.png"
+      }
+    ]
+  }
+}
